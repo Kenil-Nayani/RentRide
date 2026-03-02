@@ -1,0 +1,78 @@
+/* ===== BIKES PAGE ===== */
+
+.bikes-page {
+    padding: 120px 0 80px;
+    background: #f8f9fa;
+}
+
+/* Heading */
+
+.page-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #777;
+}
+
+/* Search Box */
+
+.bike-search-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-top: 30px;
+}
+
+/* Search Form */
+
+.bike-search-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.bike-search-form .form-control {
+    height: 50px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.bike-search-form .btn-yellow {
+    height: 50px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+/* Availability Badges */
+
+.badge-available {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #22c55e;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.badge-unavailable {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ef4444;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+/* Fix badge position */
+
+.bike-image {
+    position: relative;
+}
