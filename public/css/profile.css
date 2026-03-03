@@ -5,7 +5,7 @@
 }
 
 .profile-card {
-    max-width: 500px;
+    max-width: 550px;
     margin: auto;
     background: #fff;
     border-radius: 14px;
@@ -33,6 +33,15 @@
     margin-bottom: 10px;
 }
 
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+    margin-bottom: 10px;
+}
+
 .profile-header h3 {
     margin: 0;
     font-weight: 700;
@@ -43,25 +52,33 @@
     margin: 0;
 }
 
+.profile-body {
+    margin-top: 20px;
+}
+
+/* FIXED ROW STRUCTURE */
 .profile-row {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;  /* makes long text wrap properly */
     padding: 12px 0;
     border-bottom: 1px solid #eee;
 }
 
 .profile-row label {
+    font-size: 13px;
     color: #777;
+    margin-bottom: 4px;
 }
 
 .profile-row span {
     font-weight: 600;
     color: #111;
+    word-break: break-word;   /* prevents overflow */
+    line-height: 1.4;
 }
-.profile-image {
-    width: 100px;      /* control size */
-    height: 100px;     /* keep square */
-    border-radius: 50%; /* make circle */
-    object-fit: cover;  /* prevent stretching */
-    border: 3px solid #eee;
+
+/* Buttons */
+.profile-card .btn {
+    padding: 8px 18px;
+    border-radius: 6px;
 }
