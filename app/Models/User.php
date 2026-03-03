@@ -14,11 +14,27 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
-        'is_admin'
+        'is_admin',
+
+        // Profile Fields
+        'license_number',
+        'license_expiry',
+        'dob',
+        'address',
+        'city',
+        'state',
+        'pincode',
+        'emergency_contact',
+        'profile_photo'
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $casts = [
+        'license_expiry' => 'date',
+        'dob' => 'date',
     ];
 }

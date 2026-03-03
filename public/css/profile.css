@@ -58,3 +58,10 @@
     font-weight: 600;
     color: #111;
 }
+.profile-image {
+    width: 100px;      /* control size */
+    height: 100px;     /* keep square */
+    border-radius: 50%; /* make circle */
+    object-fit: cover;  /* prevent stretching */
+    border: 3px solid #eee;
+}

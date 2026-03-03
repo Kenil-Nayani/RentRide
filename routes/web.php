@@ -44,3 +44,5 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])
     ->name('admin.dashboard');
 
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
+Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('profile.update');
