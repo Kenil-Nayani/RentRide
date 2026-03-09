@@ -23,7 +23,7 @@
 </div>
 
         <div class="hero-image">
-            <img src="" alt="Bike">
+            <img src="images/hero.jpeg" alt="Bike">
         </div>
 
     </div>
