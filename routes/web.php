@@ -1,51 +1,57 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
-use App\Models\Bike;
 use App\Http\Controllers\BikeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::post('/select-city', [HomeController::class, 'selectCity'])->name('select.city');
 
+Route::post('/select-city', [HomeController::class, 'selectCity'])
+    ->name('select.city');
 
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::get('/register', [AuthController::class, 'showRegister'])
+    ->name('register');
+
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/login', [AuthController::class, 'showLogin'])
+    ->name('login');
+
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->name('logout');
 
-Route::get('/bikes', function (Request $request) {
+Route::get('/bikes', [BikeController::class, 'index'])
+    ->name('bikes');
 
-    $city = $request->city;
+Route::get('/bike/{id}', [BikeController::class, 'show'])
+    ->name('bike.details');
 
-    if ($city) {
-        $bikes = Bike::where('city', $city)->get();
-    } else {
-        $bikes = Bike::all();
-    }
+Route::middleware('auth')->group(function () {
 
-    return view('bikes', compact('bikes', 'city'));
-})->name('bikes');
+    Route::get('/profile', [UserController::class, 'profile'])
+        ->name('profile');
 
-Route::get('/bike/{id}', function ($id) {
-    $bike = Bike::findOrFail($id);
-    return view('bike-details', compact('bike'));
-})->name('bike.details');
+    Route::get('/profile/edit', [UserController::class, 'editProfile'])
+        ->name('profile.edit');
 
+    Route::post('/profile/update', [UserController::class, 'updateProfile'])
+        ->name('profile.update');
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])
-    ->name('admin.dashboard');
+});
 
-Route::get('/profile', [UserController::class, 'profile'])->name('profile');
-Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
-Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('profile.update');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+        ->name('admin.dashboard');
+
+});
 
 Route::view('/about', 'about')->name('about');
+
 Route::view('/contact', 'contact')->name('contact');
