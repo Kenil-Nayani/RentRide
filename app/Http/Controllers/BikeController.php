@@ -18,7 +18,7 @@ class BikeController extends Controller
             $bikes = Bike::all();
         }
 
-        return view('bikes', compact('bikes','city'));
+        return view('bikes', compact('bikes', 'city'));
     }
 
     public function show($id)

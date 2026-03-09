@@ -159,16 +159,29 @@
                         <span>/ day</span>
                     </div>
 
-                    <form>
+                    @if(session('success'))
+                        <div class="alert alert-success mt-2 mb-3">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if($errors->any())
+                        <div class="alert alert-danger mt-2 mb-3">
+                            {{ $errors->first() }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('bike.rent', $bike->id) }}">
+                        @csrf
 
                         <div class="mb-3">
                             <label>Start Date</label>
-                            <input type="date" class="form-control">
+                            <input type="date" name="start_date" class="form-control" required min="{{ date('Y-m-d') }}">
                         </div>
 
                         <div class="mb-3">
                             <label>End Date</label>
-                            <input type="date" class="form-control">
+                            <input type="date" name="end_date" class="form-control" required min="{{ date('Y-m-d') }}">
                         </div>
 
                         <button class="bd-btn w-100">

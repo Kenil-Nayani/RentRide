@@ -14,6 +14,7 @@ body {
     padding: 18px 0;
     width: 100%;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .navbar-wrapper {
@@ -79,14 +80,18 @@ body {
     font-weight: 600;
     border: none;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
     height: 42px;
     display: inline-flex;
     align-items: center;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); /* Golden glow */
 }
 
-.btn-yellow:hover {
-    background-color: #e0a800;
+.btn-yellow:hover, .btn-yellow:focus {
+    background-color: #ffca2c; /* Slightly lighter on hover */
+    color: #000;
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4); /* Stronger golden glow */
 }
 
 
@@ -156,16 +161,17 @@ body {
 
 .dropdown-menu-custom {
     position: absolute;
-    top: 55px;
+    top: 65px; /* Moved down slightly for animation */
     right: 0;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border-radius: 12px; /* Rounder corners */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12); /* Softer, wider shadow */
     min-width: 180px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: 0.25s;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden; /* For rounded corners on items */
 }
 
 .user-menu:hover .dropdown-menu-custom {
@@ -237,6 +243,10 @@ body {
     font-weight: 600;
 }
 
+.hero-image {
+    position: relative;
+}
+
 .hero-image img {
     width: 520px;
     max-width: 100%;
@@ -245,7 +255,24 @@ body {
 }
 
 .hero-image img:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02); /* Slight scale on hover */
+}
+
+/* Float animation for elements */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
 }
 
 
@@ -272,15 +299,17 @@ body {
 
 .bike-card {
     background: white;
-    border-radius: 14px;
+    border-radius: 16px; /* Slightly rounder */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06); /* Softer shadow */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     height: 100%;
+    border: 1px solid rgba(0,0,0,0.02); /* Very subtle border */
 }
 
 .bike-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* Deep shadow on hover */
 }
 
 /* IMAGE */

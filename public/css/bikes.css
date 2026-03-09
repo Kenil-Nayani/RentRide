@@ -21,10 +21,11 @@
 
 .bike-search-box {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 25px; /* Enhanced padding for premium feel */
+    border-radius: 16px; /* Rounder corners */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06); /* Softer, broader shadow */
     margin-top: 30px;
+    border: 1px solid rgba(0,0,0,0.02); /* Subtle border for depth */
 }
 
 /* Search Form */

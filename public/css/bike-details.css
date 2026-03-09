@@ -15,10 +15,11 @@
 
 .bd-image-card {
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 15px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     margin-bottom: 25px;
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
 .bd-image-card img {
@@ -35,10 +36,11 @@
 
 .bd-section {
     background: #ffffff;
-    border-radius: 14px;
-    padding: 20px;
+    border-radius: 16px;
+    padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
 .bd-section-title {
@@ -164,11 +166,12 @@
 
 .bd-book-card {
     background: #ffffff;
-    border-radius: 14px;
-    padding: 25px;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     position: sticky;
     top: 100px;
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
 .bd-bike-name {
@@ -194,14 +197,27 @@
    Inputs
 =============================== */
 
+.bd-book-card label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
 .bd-book-card input {
-    border-radius: 8px;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    width: 100%;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .bd-book-card input:focus {
     border-color: #facc15;
-    box-shadow: none;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.15);
 }
 
 

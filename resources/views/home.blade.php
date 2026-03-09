@@ -23,7 +23,7 @@
 </div>
 
         <div class="hero-image">
-            <img src="images/hero.jpeg" alt="Bike">
+            <img src="images/hero.jpeg" alt="Bike" class="animate-float">
         </div>
 
     </div>
