@@ -8,8 +8,8 @@
         <ul class="nav-menu">
             <li><a class="nav-link" href="{{ route('home') }}">Home</a></li>
             <li><a class="nav-link" href="{{ route('bikes') }}">Bikes</a></li>
-            <li><a class="nav-link" href="#">About Us</a></li>
-            <li><a class="nav-link" href="#">Contact Us</a></li>
+            <li><a class="nav-link" href="{{ route('about') }}">About Us</a></li>
+            <li><a class="nav-link" href="{{ route('contact') }}">Contact Us</a></li>
             <li><a class="nav-link" href="">My Bookings</a></li>
         </ul>
 
