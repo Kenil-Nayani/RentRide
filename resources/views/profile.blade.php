@@ -37,6 +37,8 @@
 
             <div class="profile-body">
 
+                <!-- Personal Information -->
+                <h5 style="margin-top: 10px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; color: #555;">Personal Information</h5>
                 <div class="profile-row">
                     <label>Name</label>
                     <span>{{ $user->name }}</span>
@@ -51,7 +53,16 @@
                     <label>Phone</label>
                     <span>{{ $user->phone ?? 'Not Added' }}</span>
                 </div>
+                
+                <div class="profile-row">
+                    <label>Date of Birth</label>
+                    <span>
+                        {{ $user->dob ? \Carbon\Carbon::parse($user->dob)->format('d M Y') : 'Not Added' }}
+                    </span>
+                </div>
 
+                <!-- Driving License Details -->
+                <h5 style="margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; color: #555;">Driving License Details</h5>
                 <div class="profile-row">
                     <label>Driving License</label>
                     <span>{{ $user->license_number ?? 'Not Added' }}</span>
@@ -74,13 +85,8 @@
                     </span>
                 </div>
 
-                <div class="profile-row">
-                    <label>Date of Birth</label>
-                    <span>
-                        {{ $user->dob ? \Carbon\Carbon::parse($user->dob)->format('d M Y') : 'Not Added' }}
-                    </span>
-                </div>
-
+                <!-- Address Information -->
+                <h5 style="margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; color: #555;">Address Information</h5>
                 <div class="profile-row">
                     <label>Address</label>
                     <span>{{ $user->address ?? 'Not Added' }}</span>
@@ -107,7 +113,7 @@
                 </div>
 
                 {{-- Edit Button --}}
-                <div style="text-align:center; margin-top:25px;">
+                <div style="text-align:center; margin-top:35px;">
                     <a href="{{ route('profile.edit') }}" class="btn btn-primary">
                         Edit Profile
                     </a>

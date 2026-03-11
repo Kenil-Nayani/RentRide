@@ -45,7 +45,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="bd-label">Gear</div>
+                                <div class="bd-label">Transmission</div>
                                 <div class="bd-value">{{ $bike->gear }}</div>
                             </div>
                         </div>
@@ -73,8 +73,25 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="bd-label">City</div>
+                                <div class="bd-label">Location</div>
                                 <div class="bd-value">{{ $bike->city }}</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Added Fuel Type -->
+                        <div class="bd-spec">
+                            <div class="bd-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 22v-8c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v8"></path>
+                                    <path d="M11 12v-4c0-1.1-.9-2-2-2"></path>
+                                    <path d="M7 6v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v8"></path>
+                                    <path d="M13 14h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-6"></path>
+                                    <circle cx="17" cy="17" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="bd-label">Fuel Type</div>
+                                <div class="bd-value">Petrol</div>
                             </div>
                         </div>
 
@@ -95,7 +112,7 @@
 
                 </div>
 
-                <!-- Ride Perks -->
+                <!-- Ride Perks (Helmet Included is already here, just keeping it nicely formatted) -->
                 <div class="bd-section">
 
                     <h4 class="bd-section-title">Ride Perks</h4>
@@ -109,7 +126,7 @@
                                           stroke="currentColor" stroke-width="2"/>
                                 </svg>
                             </div>
-                            <span>Helmet Included</span>
+                            <span>1 Free Helmet Provided</span>
                         </div>
 
                         <div class="bd-perk">
@@ -153,10 +170,31 @@
                 <div class="bd-book-card">
 
                     <h3 class="bd-bike-name">{{ $bike->name }}</h3>
+                    <p class="text-muted mb-4">Rent easily with our instant booking process.</p>
 
-                    <div class="bd-price">
-                        ₹{{ $bike->price_per_day }}
-                        <span>/ day</span>
+                    <!-- Enhanced Pricing Box to show all required prices -->
+                    <div class="p-3 mb-4" style="background: #f8f9fa; border: 1px solid #eee; border-radius: 12px;">
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-2 pb-2" style="border-bottom: 1px dashed #ddd;">
+                            <span style="font-weight: 500; color: #555;">Price:</span>
+                            <div class="bd-price m-0" style="font-size: 20px;">
+                                ₹{{ $bike->price_per_day }}<span style="font-weight: normal;">/day</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-2 pb-2" style="border-bottom: 1px dashed #ddd;">
+                            <span style="font-weight: 500; color: #555;">Refundable Deposit:</span>
+                            <div class="m-0" style="font-size: 16px; font-weight: 600; color: #111;">
+                                ₹2000
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span style="font-weight: 500; color: #dc3545;">Late return penalty:</span>
+                            <div class="m-0" style="font-size: 15px; font-weight: 600; color: #dc3545;">
+                                ₹100 <span style="font-weight: normal; font-size: 13px;">/hour</span>
+                            </div>
+                        </div>
                     </div>
 
                     @if(session('success'))

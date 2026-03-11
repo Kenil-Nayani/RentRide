@@ -37,4 +37,9 @@ class User extends Authenticatable
         'license_expiry' => 'date',
         'dob' => 'date',
     ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

@@ -26,7 +26,10 @@ Route::post('/bike/{id}/rent', [BookingController::class, 'rent'])
     ->name('bike.rent')
     ->middleware('auth');
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('bikes', \App\Http\Controllers\Admin\BikeController::class);
+});
 
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');

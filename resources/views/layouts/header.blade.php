@@ -51,9 +51,15 @@
                         </a>
 
                         <!-- EXISTING -->
-                        <a href="" class="dropdown-item">
-                            My Bookings
-                        </a>
+                        @if(Auth::user()->is_admin)
+                            <a href="{{ route('admin.dashboard') }}" class="dropdown-item">
+                                Dashboard
+                            </a>
+                        @else
+                            <a href="" class="dropdown-item">
+                                My Bookings
+                            </a>
+                        @endif
 
                         <!-- LOGOUT -->
                         <form method="POST" action="{{ route('logout') }}">

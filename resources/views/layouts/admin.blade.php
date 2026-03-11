@@ -23,19 +23,19 @@
     <aside class="sidebar">
 
         <div class="logo">
-            RentRide
+            <a href="{{ route('home') }}" style="color: inherit; text-decoration: none;">RentRide</a>
         </div>
 
         <ul class="menu">
 
             <li>
-                <a href="{{ route('admin.dashboard') }}" class="active">
+                <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     Dashboard
                 </a>
             </li>
 
             <li>
-                <a href="#">Manage Bikes</a>
+                <a href="{{ route('admin.bikes.index') }}" class="{{ request()->routeIs('admin.bikes.*') ? 'active' : '' }}">Manage Bikes</a>
             </li>
 
             <li>

@@ -8,6 +8,10 @@ class Bike extends Model
 {
     protected $fillable = [
         'name',
+        'brand',
+        'model',
+        'fuel_type',
+        'status',
         'city',
         'price_per_day',
         'engine',
@@ -15,4 +19,12 @@ class Bike extends Model
         'mileage',
         'image'
     ];
+
+    /**
+     * Get all bookings for this bike.
+     */
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }
